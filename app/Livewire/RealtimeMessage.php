@@ -14,6 +14,7 @@ class RealtimeMessage extends Component
 
 
     public string $message;
+    public $messages = array();
 
     public function sendMessage()
     {
@@ -27,7 +28,9 @@ class RealtimeMessage extends Component
     #[On('echo:message,SendMessageEvent')]
     public function notifyNewOrder($payload)
     {
-        $this->alert('info', $payload['message']);
+
+       // $this->alert('info', $payload['message']);
+        array_push($this->messages, $payload['message']);
     }
 
     public function render()
