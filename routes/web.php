@@ -9,7 +9,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/message', RealtimeMessage::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
